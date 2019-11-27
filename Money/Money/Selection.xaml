@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Money.Selection"
+             Padding="20"
+             BackgroundColor="#EFF3DB"
+             Title="Найти"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Начальная дата"
+                   FontSize="Micro"
+                   TextColor="Black"
+                   />
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="chStartDate" Color="Brown"/>
+                <DatePicker x:Name="dpStart" 
+                            HorizontalOptions="FillAndExpand"
+                            Date="01/01/1900"/>
+            </StackLayout>
+
+            <Label Text="Конечная дата"
+                   FontSize="Micro"
+                   TextColor="Black"
+                   />
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="chEndDate" Color="Brown"/>
+                <DatePicker x:Name="dpEnd" 
+                            HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+
+            <Label Text="Тип списания"
+                   FontSize="Micro"
+                   TextColor="Black"
+                   />
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="chType" Color="Brown"/>
+                <Picker x:Name ="pickerType" 
+                        SelectedIndex="0"
+                        HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <Label Text="Только доходы"
+                   FontSize="Micro"
+                   TextColor="Black"
+                   />
+            <CheckBox x:Name="chDohod" Color="DarkGoldenrod"/>
+
+            <Button x:Name="btnShow" 
+                    Text="Показать" 
+                    Clicked="BtnShow_Clicked"
+                    BackgroundColor="#6B824B" 
+                    CornerRadius="10"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

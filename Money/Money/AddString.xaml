@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Money.AddString"
+             Padding="20"
+             BackgroundColor="#EFF3DB">
+    <ContentPage.Content>
+        <StackLayout>
+
+            
+            <Label Text="ДОБАВИТЬ ЗАПИСЬ"
+                   FontSize="Large"
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="#000000"                  
+                   
+                   />
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnSign" 
+                        Text="-" 
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        WidthRequest="50" 
+                        Clicked="BtnSign_Clicked"
+                        BackgroundColor="#6B824B" 
+                        BorderColor="#000000" 
+                        BorderWidth="1"
+                        TextColor="#000000" 
+                        CornerRadius="10"
+                        
+                        />
+                <Entry x:Name="entSum" 
+                       Placeholder="Сумма" 
+                       Keyboard="Numeric" 
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="DarkKhaki"
+                       FontAttributes="Bold" 
+                       TextColor="Black"
+                       PlaceholderColor="#282828"
+                       />
+            </StackLayout>
+
+            <BoxView BackgroundColor="OliveDrab" 
+                     HeightRequest="3" 
+                     HorizontalOptions="FillAndExpand"/>
+            <Picker x:Name="picerType" 
+                    SelectedIndex="0" 
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    BackgroundColor="DarkKhaki"                    
+                    />
+
+            
+
+            <BoxView BackgroundColor="OliveDrab" 
+                     HeightRequest="3" 
+                     HorizontalOptions="FillAndExpand"/>
+
+            <Button x:Name="btnAddString"
+                    Text="СОХРАНИТЬ"
+                    FontAttributes="Bold"
+                    BackgroundColor="#FF6B824B" 
+                    BorderColor="#000000" 
+                    BorderWidth="1"
+                    Clicked="BtnAddString_Clicked"
+                    TextColor="#000000"  
+                    CornerRadius="10"
+                    />
+
+            <BoxView BackgroundColor="OliveDrab" 
+                     HeightRequest="3" 
+                     HorizontalOptions="FillAndExpand"
+                     />
+
+            <Editor x:Name ="entryNote" 
+                   Placeholder="Описание(необязательно)"
+                   BackgroundColor="DarkKhaki" 
+                   HeightRequest="200" 
+                   VerticalOptions="StartAndExpand" 
+                    PlaceholderColor="#282828"
+                   
+                   />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
