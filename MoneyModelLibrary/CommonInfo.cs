@@ -25,7 +25,19 @@ namespace MoneyModelLibrary
         /// </summary>
         public Dictionary<string, int> CurrentMonth { get; private set; }
 
+        /// <summary>
+        /// Инициализация
+        /// </summary>
+        /// <returns></returns>
+        piblic CommonInfo(List<Stroka> strokas)
+        {
+            AllTime = new Dictionary<string, int>();
+            LastMonth = new Dictionary<string, int>();
+            CurrentMonth = new Dictionary<string, int>();
+            
+            // разбрасывает все значения входного массива по словарям
 
+        }
 
     }
 }
