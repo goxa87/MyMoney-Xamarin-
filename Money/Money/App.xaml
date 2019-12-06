@@ -7,5 +7,30 @@
              x:Class="Money.App">
     <Application.Resources>
 
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#6B824B"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BorderColor" Value="#000000"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+
+        
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#000000"/>
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="DarkKhaki"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#000000"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

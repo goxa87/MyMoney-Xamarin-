@@ -14,7 +14,6 @@ namespace MoneyModelLibrary
     
     public class Stroka
     {
-
         [PrimaryKey,AutoIncrement]
         public int ID { get; set; }
         /// <summary>

@@ -12,34 +12,20 @@
 
             
             <Label Text="ДОБАВИТЬ ЗАПИСЬ"
-                   FontSize="Large"
                    HorizontalOptions="Center" 
-                   HorizontalTextAlignment="Center" 
-                   FontAttributes="Bold" 
-                   TextColor="#000000"                  
+                   HorizontalTextAlignment="Center"    
                    
                    />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnSign" 
                         Text="-" 
-                        FontAttributes="Bold"
-                        FontSize="Large"
                         WidthRequest="50" 
                         Clicked="BtnSign_Clicked"
-                        BackgroundColor="#6B824B" 
-                        BorderColor="#000000" 
-                        BorderWidth="1"
-                        TextColor="#000000" 
-                        CornerRadius="10"
-                        
                         />
                 <Entry x:Name="entSum" 
                        Placeholder="Сумма" 
                        Keyboard="Numeric" 
                        HorizontalOptions="FillAndExpand"
-                       BackgroundColor="DarkKhaki"
-                       FontAttributes="Bold" 
-                       TextColor="Black"
                        PlaceholderColor="#282828"
                        />
             </StackLayout>
@@ -62,13 +48,7 @@
 
             <Button x:Name="btnAddString"
                     Text="СОХРАНИТЬ"
-                    FontAttributes="Bold"
-                    BackgroundColor="#FF6B824B" 
-                    BorderColor="#000000" 
-                    BorderWidth="1"
                     Clicked="BtnAddString_Clicked"
-                    TextColor="#000000"  
-                    CornerRadius="10"
                     />
 
             <BoxView BackgroundColor="OliveDrab" 

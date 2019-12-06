@@ -22,7 +22,7 @@ namespace MoneyModelLibrary
         /// Инииализация
         /// </summary>
         /// <param name="meth">Метод для оповещения об ошибках</param>
-        public RecordType(onThrow meth)
+        public RecordType()
         {
             // здесь должна быть загрузка из файла списка типов
             CallExMethod = meth;
