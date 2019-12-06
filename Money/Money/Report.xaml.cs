@@ -16,10 +16,22 @@ namespace Money
         public Report()
         {
             InitializeComponent();
-
+            
+            // заполнение значениями
             Task.Factory.StartNew(GetContent);            
         }
 
+        /// <summary>
+        /// при появлении получить новыен данные
+        /// </summary>
+        protected override void OnAppearing()
+        {
+            GetContent();
+        }
+
+        /// <summary>
+        /// получения значений для заполнения формы
+        /// </summary>
         void GetContent()
         {
             //List<Stroka> lis 
@@ -60,6 +72,27 @@ namespace Money
             lblLastDis.Text = lastM.ToString();
             lblTotalPlus.Text = totP.ToString();
             lblTotalDis.Text = totM.ToString();
+        }
+
+        async void ClearHistory(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("ВНИМАНИЕ!", "Все записи будут удалены. Вы уверенны?", "Да. Удалить", "НЕТ");
+            if(answer)
+            {
+                int col = 0;
+                List<models.Stroka> list = App.Database.GetStroksAsync().Result;
+                foreach (var i in list)
+                {
+                    col+= await App.Database.DeleteStrokaAsync(i);
+                }
+
+                lblCurPlus.Text = "0";
+                lblCurDis.Text = "0";
+                lblLastPlus.Text = "0";
+                lblLastDis.Text = "0";
+                lblTotalPlus.Text = "0";
+                lblTotalDis.Text = "0";
+            }
         }
     }
 }

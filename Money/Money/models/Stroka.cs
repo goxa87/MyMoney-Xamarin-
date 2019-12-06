@@ -51,7 +51,7 @@ namespace Money.models
             Type = type;
             Note = n;
             Sign = s;
-            if (s == false)
+            if (!s)
                 Sum = -Sum;
             Data = DateTime.Now;
         }

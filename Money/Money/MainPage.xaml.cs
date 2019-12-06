@@ -20,8 +20,9 @@ namespace Money
             this.On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
             BarBackgroundColor = Color.FromHex("#EFF3DB");
             BarTextColor = Color.Black;
-            SelectedTabColor = Color.PaleGoldenrod;
+            SelectedTabColor = Color.Red;
             //UnselectedTabColor = Color.White;
+            
 
             var addString = new AddString();
             addString.Title = "ДОБАВИТЬ";
@@ -31,11 +32,14 @@ namespace Money
             var selection = new NavigationPage(new Selection()) { Title = "ПОИСК" , BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black};
             selection.IconImageSource = "ico3.png";
 
-            var reportPage = new Report() { Title = "ОТЧЕТ" };
+            var reportPage = new NavigationPage( new Report()) { Title = "ОТЧЕТ", BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black };
             reportPage.IconImageSource = "ico4.png";
             Children.Add(addString);
             Children.Add(selection); // навигация
             Children.Add(reportPage);
+
+            
         }
+                
     }
 }

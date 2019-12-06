@@ -20,6 +20,19 @@
                 <Label x:Name="lblCurPlus" Text="123" FontSize="Medium"/>
             </StackLayout>
 
+            <Button x:Name="btnCurDetail" Text ="ДЕТАЛИ" 
+                  BackgroundColor="#00000000" 
+                    TextColor="PaleVioletRed"
+                  BorderWidth="0"
+                  VerticalOptions="Start"
+                  FontSize="Small"
+                  FontAttributes="None"
+                  HorizontalOptions="Start"
+                  HeightRequest="30"
+                  Padding="3"
+                  WidthRequest="80"
+                  />
+          
             <Label Text="прошлый месяц" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="расход" FontSize="Small" FontAttributes="None"/>
@@ -30,6 +43,19 @@
                 <Label x:Name="lblLastPlus" Text="123" FontSize="Medium"/>
             </StackLayout>
 
+            <Button x:Name="btnLastDetail" Text ="ДЕТАЛИ" 
+                  BackgroundColor="#00000000" 
+                    TextColor="PaleVioletRed"
+                  BorderWidth="0"
+                  VerticalOptions="Start"
+                  FontSize="Small"
+                  FontAttributes="None"
+                  HorizontalOptions="Start"
+                  HeightRequest="30"
+                  Padding="3"
+                  WidthRequest="80"
+                  />
+            
             <Label Text="Всего" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="расход" FontSize="Small" FontAttributes="None"/>
@@ -40,9 +66,23 @@
                 <Label x:Name="lblTotalPlus" Text="123" FontSize="Medium"/>
             </StackLayout>
 
+            <Button x:Name="btnTotalDetail" Text ="ДЕТАЛИ" 
+                  BackgroundColor="#00000000" 
+                    TextColor="PaleVioletRed"
+                  BorderWidth="0"
+                  VerticalOptions="Start"
+                  FontSize="Small"
+                  FontAttributes="None"
+                  HorizontalOptions="Start"
+                  HeightRequest="30"
+                  Padding="3"
+                  WidthRequest="80"
+                  />
+            
             <Button x:Name="btnShare" Text="Поделиться" />
             <Button x:Name="btnMakeJson" Text="Сделать JSON"/>
-            <Button x:Name="btnClaerHistory"  Text="Отчистить историю"/>
+            <Button x:Name="btnClaerHistory"  Text="Отчистить историю" Clicked="ClearHistory"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

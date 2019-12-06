@@ -14,13 +14,13 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="BorderColor" Value="#000000"/>
                 <Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="TextColor" Value="#000000" />
                 <Setter Property="CornerRadius" Value="10"/>
             </Style>
 
         
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="TextColor" Value="#000000"/>
             </Style>
