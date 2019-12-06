@@ -6,12 +6,43 @@
              mc:Ignorable="d"
              x:Class="Money.Report"
              Title="Вывести отчет"
+             BackgroundColor="#EFF3DB"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20">
+            <Label Text="текущий месяц" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="расход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblCurDis" Text="123" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="доход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblCurPlus" Text="123" FontSize="Medium"/>
+            </StackLayout>
+
+            <Label Text="прошлый месяц" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="расход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblLastDis" Text="123" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="доход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblLastPlus" Text="123" FontSize="Medium"/>
+            </StackLayout>
+
+            <Label Text="Всего" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="расход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblTotalDis" Text="123" FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="доход" FontSize="Small" FontAttributes="None"/>
+                <Label x:Name="lblTotalPlus" Text="123" FontSize="Medium"/>
+            </StackLayout>
+
+            <Button x:Name="btnShare" Text="Поделиться" Margin="20 0 0 0" />
+            <Button x:Name="btnMakeJson" Text="Сделать JSON"/>
+            <Button x:Name="btnClaerHistory"  Text="Отчистить историю"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using MoneyModelLibrary;
 
 namespace Money
 {
@@ -21,14 +15,14 @@ namespace Money
         /// <summary>
         /// список типов записей
         /// </summary>
-        public static RecordType recordType { get; set; }
-
+        public static models.RecordType recordType { get; set; }
+        
         /// <summary>
         /// для статического поля
         /// </summary>
         static AddString()
         {
-            recordType = new RecordType((string s,int i) => { });
+            recordType = new models.RecordType();
         }
 
         public AddString()
@@ -107,7 +101,7 @@ namespace Money
                 if (!flag)
                     throw new FormatException("Проблемы с вводом значения");
 
-                Stroka rez = new Stroka(Sum,currentSign,picerType.SelectedItem.ToString(),entryNote.Text);
+                models.Stroka rez = new models.Stroka(Sum,currentSign,picerType.SelectedItem.ToString(),entryNote.Text);
                 //App.book.Book.Add(rez);
                 await App.Database.SaveStrokaAsync(rez);
 

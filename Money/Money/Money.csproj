@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MoneyModelLibrary\MoneyModelLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="AddString.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

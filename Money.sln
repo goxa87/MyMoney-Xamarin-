@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money.Android", "Money\Mone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Money", "Money\Money\Money.csproj", "{08D3334F-51EC-4C55-8095-7B9C74E9A530}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyModelLibrary", "MoneyModelLibrary\MoneyModelLibrary.csproj", "{C6AF7D68-41B7-4789-BB4B-F1A4C5CC7083}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{08D3334F-51EC-4C55-8095-7B9C74E9A530}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08D3334F-51EC-4C55-8095-7B9C74E9A530}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08D3334F-51EC-4C55-8095-7B9C74E9A530}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{C6AF7D68-41B7-4789-BB4B-F1A4C5CC7083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6AF7D68-41B7-4789-BB4B-F1A4C5CC7083}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6AF7D68-41B7-4789-BB4B-F1A4C5CC7083}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6AF7D68-41B7-4789-BB4B-F1A4C5CC7083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

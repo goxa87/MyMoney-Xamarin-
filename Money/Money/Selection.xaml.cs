@@ -1,6 +1,4 @@
-﻿using MoneyModelLibrary;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
@@ -9,6 +7,7 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Internals;
+using System;
 
 namespace Money
 {
@@ -34,7 +33,7 @@ namespace Money
 
 
             //это работает правильно но сделано криво
-            IEnumerable<Stroka> viborka;
+            IEnumerable<models.Stroka> viborka;
             if (chDohod.IsChecked)
             {
                 viborka = from S in await App.Database.GetStroksAsync()  // выбор по дате и сумме +
@@ -57,7 +56,7 @@ namespace Money
                 }
             }
 
-            ObservableCollection<Stroka> rez2 = new ObservableCollection<Stroka>();
+            ObservableCollection<models.Stroka> rez2 = new ObservableCollection<models.Stroka>();
             viborka.ForEach((o) => rez2.Add(o));
 
 
