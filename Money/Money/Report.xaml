@@ -40,7 +40,7 @@
                 <Label x:Name="lblTotalPlus" Text="123" FontSize="Medium"/>
             </StackLayout>
 
-            <Button x:Name="btnShare" Text="Поделиться" Margin="20 0 0 0" />
+            <Button x:Name="btnShare" Text="Поделиться" />
             <Button x:Name="btnMakeJson" Text="Сделать JSON"/>
             <Button x:Name="btnClaerHistory"  Text="Отчистить историю"/>
         </StackLayout>
