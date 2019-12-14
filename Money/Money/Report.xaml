@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Money.Report"
-             Title="Вывести отчет"
+             Title="ОТЧЕТ"
              BackgroundColor="#EFF3DB"
              >
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Label Text="текущий месяц" />
+            <Label Text="Текущий месяц" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="расход" FontSize="Small" FontAttributes="None"/>
                 <Label x:Name="lblCurDis" Text="123" FontSize="Medium"/>
@@ -22,8 +22,7 @@
 
             <Button x:Name="btnCurDetail" Text ="ДЕТАЛИ" 
                   BackgroundColor="#00000000" 
-                    TextColor="PaleVioletRed"
-                  BorderWidth="0"
+                  TextColor="PaleVioletRed"
                   VerticalOptions="Start"
                   FontSize="Small"
                   FontAttributes="None"
@@ -31,9 +30,10 @@
                   HeightRequest="30"
                   Padding="3"
                   WidthRequest="80"
+                  Clicked="BtnCurDetail_Clicked"
                   />
           
-            <Label Text="прошлый месяц" />
+            <Label Text="Прошлый месяц" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="расход" FontSize="Small" FontAttributes="None"/>
                 <Label x:Name="lblLastDis" Text="123" FontSize="Medium"/>
@@ -46,7 +46,6 @@
             <Button x:Name="btnLastDetail" Text ="ДЕТАЛИ" 
                   BackgroundColor="#00000000" 
                     TextColor="PaleVioletRed"
-                  BorderWidth="0"
                   VerticalOptions="Start"
                   FontSize="Small"
                   FontAttributes="None"
@@ -54,6 +53,7 @@
                   HeightRequest="30"
                   Padding="3"
                   WidthRequest="80"
+                    Clicked="BtnLastDetail_Clicked"
                   />
             
             <Label Text="Всего" />
@@ -68,8 +68,7 @@
 
             <Button x:Name="btnTotalDetail" Text ="ДЕТАЛИ" 
                   BackgroundColor="#00000000" 
-                    TextColor="PaleVioletRed"
-                  BorderWidth="0"
+                  TextColor="PaleVioletRed"
                   VerticalOptions="Start"
                   FontSize="Small"
                   FontAttributes="None"
@@ -77,12 +76,9 @@
                   HeightRequest="30"
                   Padding="3"
                   WidthRequest="80"
+                    Clicked="BtnTotalDetail_Clicked"
                   />
-            
-            <Button x:Name="btnShare" Text="Поделиться" />
-            <Button x:Name="btnMakeJson" Text="Сделать JSON"/>
-            <Button x:Name="btnClaerHistory"  Text="Отчистить историю" Clicked="ClearHistory"/>
-            
+                        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

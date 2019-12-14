@@ -19,8 +19,7 @@
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="chStartDate" Color="Brown"/>
                 <DatePicker x:Name="dpStart" 
-                            HorizontalOptions="FillAndExpand"
-                            Date="01/01/1900"/>
+                            HorizontalOptions="FillAndExpand"/>
             </StackLayout>
 
             <Label Text="Конечная дата"

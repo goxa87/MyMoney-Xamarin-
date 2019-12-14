@@ -17,6 +17,7 @@ namespace Money
         public Selection()
         {
             InitializeComponent();
+            dpStart.Date = DateTime.Today.AddDays(-1);
             pickerType.ItemsSource = AddString.recordType.Types;
         }
 
@@ -56,7 +57,7 @@ namespace Money
                 }
             }
 
-            ObservableCollection<models.Stroka> rez2 = new ObservableCollection<models.Stroka>();
+            List<models.Stroka> rez2 = new List<models.Stroka>();
             viborka.ForEach((o) => rez2.Add(o));
 
 

@@ -37,6 +37,13 @@ namespace Money
             InitializeComponent();
 
             MainPage = new MainPage();
+
+            //Database.SaveStrokaAsync(new models.Stroka(500, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-1) });
+            //Database.SaveStrokaAsync(new models.Stroka(600, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-1) });
+
+            //Database.SaveStrokaAsync(new models.Stroka(700, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-3) });
+            //Database.SaveStrokaAsync(new models.Stroka(800, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-3) });
+
             //book = new MoneyBook("Goxa");
             //book.Book[0].Data = DateTime.Today.AddDays(-2);
             //book.Book[1].Data = DateTime.Today.AddDays(-2);

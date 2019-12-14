@@ -15,7 +15,13 @@
                 HorizontalTextAlignment="Center"
                 TextColor="Black"
                 />-->
-         <ListView x:Name="lvViborka"
+        <StackLayout Orientation="Horizontal">
+            <Switch x:Name="swCaregory" WidthRequest="50" HeightRequest="10" OnColor="Green" Toggled="SwCaregory_Toggled"/>
+            <Label Text="Свернуть категории"/>
+
+        </StackLayout>
+        
+        <ListView x:Name="lvViborka"
                    HasUnevenRows="True"
                    SeparatorColor="Olive"
                    
@@ -24,13 +30,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout Orientation="Horizontal">
-                                
+                            <StackLayout Orientation="Horizontal">                                
                                 <Label Text="{Binding Sum}"  TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
                                 <Label Text="{Binding Type}" FontSize="Small" TextColor="DarkGoldenrod" HorizontalTextAlignment="End"/>
-                                <Label Text="{Binding Data , StringFormat='{0:dd.MM.yy hh.mm}'}" FontSize="Small" TextColor="DarkGoldenrod"/>
-                                
-                                
+                                <Label Text="{Binding Data , StringFormat='{0:dd.MM.yy hh.mm}'}" FontSize="Small" TextColor="DarkGoldenrod"/>                                                                
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

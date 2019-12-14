@@ -44,6 +44,10 @@ namespace Money
 
             DateTime curD = DateTime.Now;
 
+            // это передаелать на другой интерфейс 
+            // по типу в заголовке выбор месяца. поумолчанию текущий
+            // внизу всего
+
             List<models.Stroka> list = App.Database.GetStroksAsync().Result;
             foreach (var e in list)
             {
@@ -74,8 +78,18 @@ namespace Money
             lblTotalDis.Text = totM.ToString();
         }
 
+
+
+
+        // ПРЕНЕСТИ В 4 СТРАНИЦУ
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void ClearHistory(object sender, EventArgs e)
         {
+            /// это перенести куданить дальше в настройки
             bool answer = await DisplayAlert("ВНИМАНИЕ!", "Все записи будут удалены. Вы уверенны?", "Да. Удалить", "НЕТ");
             if(answer)
             {
@@ -93,6 +107,55 @@ namespace Money
                 lblTotalPlus.Text = "0";
                 lblTotalDis.Text = "0";
             }
+        }
+
+        /// <summary>
+        /// Вызов выборки для текущего месяца
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void BtnCurDetail_Clicked(object sender, EventArgs e)
+        {
+            List<models.Stroka> data = App.Database.GetStroksAsync().Result;
+
+            DateTime start = new DateTime(DateTime.Today.Year,DateTime.Today.Month,1);  // этот мес 1 число
+            DateTime end = new DateTime((DateTime.Today.AddMonths(1).Year), DateTime.Today.AddMonths(1).Month, 1 );   // след мес первое число
+ 
+            data = data.Where(d => d.Data > start
+            && (d.Data< end)).ToList();
+
+            await Navigation.PushAsync(new ListView(data));
+
+        }
+
+        /// <summary>
+        /// Вызов выборки для прошлого месяца
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void BtnLastDetail_Clicked(object sender, EventArgs e)
+        {
+            List<models.Stroka> data = App.Database.GetStroksAsync().Result;
+
+            DateTime start = new DateTime(DateTime.Today.AddMonths(-1).Year, DateTime.Today.AddMonths(-1).Month, 1); // пред мес 1 число
+            DateTime end = new DateTime((DateTime.Today.Year), DateTime.Today.Month, 1);  // этот мес 1 число 00 ч 00 мин
+
+            data = data.Where(d => d.Data > start
+            && d.Data<end).ToList();
+
+            await Navigation.PushAsync(new ListView(data));
+        }
+
+
+
+        /// <summary>
+        /// Вызов выборки для всего периода
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnTotalDetail_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
