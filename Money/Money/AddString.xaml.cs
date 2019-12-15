@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,31 +13,21 @@ namespace Money
         /// Знак операции - списание + начисление
         /// </summary>
         bool currentSign { get; set; }
-
-        /// <summary>
-        /// список типов записей
-        /// </summary>
-        public static models.RecordType recordType { get; set; }
         
-        /// <summary>
-        /// для статического поля
-        /// </summary>
-        static AddString()
-        {
-            recordType = new models.RecordType();
-        }
-
         public AddString()
         {
             InitializeComponent();
             currentSign = false;
-            //recordType = new RecordType(OnTypeException);
-            picerType.ItemsSource = recordType.Types;
 
-            //picerType.ItemsSource = new List<string> { "food", "water", "grass" };
-            // сделать если не пустое
+
+            var rez = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+            // дикий костыль  
+            List<string> arr = new List<string>();
+            foreach (var a in rez)
+                arr.Add(a.str);
+            picerType.ItemsSource = arr;
             picerType.SelectedIndex = 0;
-            //App.recordType.CallExMethod += OnTypeException;
+            
         }
 
         /// <summary>
@@ -49,11 +41,25 @@ namespace Money
             {
                 currentSign = false;
                 btnSign.Text = "-";
+                var rez = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+                // дикий костыль  
+                List<string> arr = new List<string>();
+                foreach (var a in rez)
+                    arr.Add(a.str);
+                picerType.ItemsSource = arr;
+                picerType.SelectedIndex = 0;
             }
             else
             {
                 currentSign = true;
                 btnSign.Text = "+";
+                var rez = App.PlusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+                // дикий костыль  
+                List<string> arr = new List<string>();
+                foreach (var a in rez)
+                    arr.Add(a.str);
+                picerType.ItemsSource = arr;
+                picerType.SelectedIndex = 0;
             }
 
         }

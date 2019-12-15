@@ -14,12 +14,18 @@ namespace Money
     public partial class App : Application
     {
         /// <summary>
-        /// Записная книжка
+        /// Доступ к записям
         /// </summary>
-        //public static MoneyModelLibrary.MoneyBook book { get; set;}
-
-
         static StringDB database;
+
+        /// <summary>
+        /// Список значений  для прибыли
+        /// </summary>
+        static TypePlusDB plusDB;
+        /// <summary>
+        /// Список значений для расходов
+        /// </summary>
+        static TypeMinusDb minusDB;
 
         public static StringDB Database
         {
@@ -32,23 +38,53 @@ namespace Money
             }
         }
 
+        public static TypePlusDB PlusDB
+        {
+            get
+            {
+                if (plusDB == null)
+                {
+                    plusDB = new TypePlusDB(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "pluses.db3"));
+                   
+                }
+                return plusDB;
+            }
+        }
+
+        public static TypeMinusDb MinusDB
+        {
+            get
+            {
+                if (minusDB == null)
+                {
+                    minusDB = new TypeMinusDb(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "minuses.db3"));                    
+                }
+                return minusDB;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new MainPage();
 
-            //Database.SaveStrokaAsync(new models.Stroka(500, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-1) });
-            //Database.SaveStrokaAsync(new models.Stroka(600, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-1) });
+            //PlusDB.DeleteValueAsync("зарплата");
+            //PlusDB.DeleteValueAsync("зарплата");
+            //PlusDB.DeleteValueAsync("зарплата");
+            //PlusDB.DeleteValueAsync("премия");
+            //PlusDB.DeleteValueAsync("премия");
+            //PlusDB.DeleteValueAsync("премия");
 
-            //Database.SaveStrokaAsync(new models.Stroka(700, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-3) });
-            //Database.SaveStrokaAsync(new models.Stroka(800, false, "еда", "чтото") { Data = DateTime.Today.AddMonths(-3) });
+            //MinusDB.DeleteValueAsync("еда");
+            //MinusDB.DeleteValueAsync("еда");
+            //MinusDB.DeleteValueAsync("еда");
+            //MinusDB.DeleteValueAsync("коммуналка");
+            //MinusDB.DeleteValueAsync("коммуналка");
+            //MinusDB.DeleteValueAsync("коммуналка");
 
-            //book = new MoneyBook("Goxa");
-            //book.Book[0].Data = DateTime.Today.AddDays(-2);
-            //book.Book[1].Data = DateTime.Today.AddDays(-2);
-            //book.Book[2].Data = DateTime.Today.AddDays(-2);
-            //recordType = new RecordType(Exception);
+
+
         }
 
         protected override void OnStart()
@@ -64,17 +100,7 @@ namespace Money
         protected override void OnResume()
         {
             // Handle when your app resumes
-        }
-
-        /// <summary>
-        /// Заглушка для создания объекта recordType
-        /// </summary>
-        /// <param name="s"></param>
-        /// <param name="i"></param>
-        public static void Exception(string s, int i)
-        {
-        }
-
+        }      
     }
 
     

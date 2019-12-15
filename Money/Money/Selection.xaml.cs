@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Internals;
 using System;
+using System.Linq;
 
 namespace Money
 {
@@ -18,7 +19,16 @@ namespace Money
         {
             InitializeComponent();
             dpStart.Date = DateTime.Today.AddDays(-1);
-            pickerType.ItemsSource = AddString.recordType.Types;
+
+            var arr1 = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+            var arr2 = App.PlusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+            var rez = arr1.Union(arr2).ToList();
+            // дикий костыль  
+            List<string> arr = new List<string>();
+            foreach (var a in rez)
+                arr.Add(a.str);
+            pickerType.ItemsSource = arr;
+            
         }
 
         async private void BtnShow_Clicked(object sender, EventArgs e)
