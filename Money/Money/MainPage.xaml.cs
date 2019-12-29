@@ -34,9 +34,13 @@ namespace Money
 
             var reportPage = new NavigationPage( new Report()) { Title = "ОТЧЕТ", BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black };
             reportPage.IconImageSource = "ico4.png";
+
+            var propPage = new NavigationPage(new Properties()) { Title = "Настройки", BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black };
+            propPage.IconImageSource = "ico5.png";
             Children.Add(addString);
             Children.Add(selection); // навигация
             Children.Add(reportPage);
+            Children.Add(propPage);
 
             
         }

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Money.Categorys">
+    <ContentPage.Content>
+      <StackLayout>
+            <Label x:Name="txtTitle" Text="Категории"/>
+            <Entry x:Name="enValue" Placeholder="Введите название"/>
+            <Button x:Name="btnAdd" Text="добавить" Clicked="BtnAdd_Clicked"/>
+            <ListView x:Name="lvCategries" SeparatorColor="Brown" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="MenuItem_Clicked"
+                                          Text="УДАЛИТЬ"
+                                          CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Id}" Grid.Column="0"/>
+                                    <Label Text="{Binding Value}" Grid.Column="1"/>
+                                    <!--<Button Text="X" BindingContext="{Binding Source={x:Reference lvCategries}, Path=BindingContext}" 
+                                            Command="{Binding DeleteItemCommand}"
+                                            CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>-->
+                                    <Button x:Name="btnDelete" 
+                                            Text="X" Grid.Column="2"
+                                            Clicked="btnDelete_Clicked"
+                                            CommandParameter="{Binding Id}"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

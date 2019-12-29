@@ -11,7 +11,7 @@ namespace Money.models
         /// идекнтификатор
         /// </summary>
         [PrimaryKey, AutoIncrement]
-        int Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Значение

@@ -3,6 +3,7 @@ using SQLite;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Money.Data
 {
@@ -44,14 +45,15 @@ namespace Money.Data
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public Task<int> DeleteValueAsync(string s)
+        async public Task<int> DeleteValueAsync(int id)
         {
-            var X = _typeMinusDB.Table<models.TypeMinus>().Where(i => i.Value == s).FirstOrDefaultAsync();
+            var X = _typeMinusDB.Table<models.TypeMinus>().Where(i => i.Id == id).FirstOrDefaultAsync();
             if (X != null)
             {
-                return _typeMinusDB.DeleteAsync(X);
+                Debug.WriteLine(X.Id);
+                return await _typeMinusDB.DeleteAsync<models.TypeMinus>(id);
             }
-            return null;
+            return -1;
         }
     }
 }

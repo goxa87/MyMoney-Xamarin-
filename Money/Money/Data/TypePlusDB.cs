@@ -39,14 +39,14 @@ namespace Money.Data
         /// <summary>
         /// Удаление строки (внимание может вернуть null)
         /// </summary>
-        /// <param name="s"></param>
+        /// <param name="s">ID записи в бд</param>
         /// <returns></returns>
-        public Task<int> DeleteValueAsync(string s)
+        public Task<int> DeleteValueAsync(int s)
         {
-            var X= _typePlusDB.Table<models.TypePlus>().Where(i => i.Value == s).FirstOrDefaultAsync();
+            var X= _typePlusDB.Table<models.TypePlus>().Where(i => i.Id == s).FirstOrDefaultAsync();
             if (X != null)
             {
-                return _typePlusDB.DeleteAsync(X);
+                return _typePlusDB.DeleteAsync<models.TypePlus>(s);
             }
             return null;
         }
