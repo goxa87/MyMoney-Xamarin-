@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Money.AddString"
              Padding="20"
-             BackgroundColor="#EFF3DB">
+             BackgroundColor="#f1ead8">
     <ContentPage.Content>
         <StackLayout>
 
@@ -25,6 +25,7 @@
                 <Entry x:Name="entSum" 
                        Placeholder="Сумма" 
                        Keyboard="Numeric" 
+                       BackgroundColor="DarkKhaki" 
                        HorizontalOptions="FillAndExpand"
                        PlaceholderColor="#282828"
                        />
@@ -61,7 +62,7 @@
                    BackgroundColor="DarkKhaki" 
                    HeightRequest="200" 
                    VerticalOptions="StartAndExpand" 
-                    PlaceholderColor="#282828"
+                   PlaceholderColor="#282828"
                    
                    />
 

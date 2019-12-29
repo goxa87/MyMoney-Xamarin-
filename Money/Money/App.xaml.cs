@@ -68,23 +68,6 @@ namespace Money
             InitializeComponent();
 
             MainPage = new MainPage();
-
-            //PlusDB.DeleteValueAsync("зарплата");
-            //PlusDB.DeleteValueAsync("зарплата");
-            //PlusDB.DeleteValueAsync("зарплата");
-            //PlusDB.DeleteValueAsync("премия");
-            //PlusDB.DeleteValueAsync("премия");
-            //PlusDB.DeleteValueAsync("премия");
-
-            //MinusDB.DeleteValueAsync("еда");
-            //MinusDB.DeleteValueAsync("еда");
-            //MinusDB.DeleteValueAsync("еда");
-            //MinusDB.DeleteValueAsync("коммуналка");
-            //MinusDB.DeleteValueAsync("коммуналка");
-            //MinusDB.DeleteValueAsync("коммуналка");
-
-
-
         }
 
         protected override void OnStart()

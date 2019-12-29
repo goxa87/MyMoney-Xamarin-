@@ -6,10 +6,11 @@
              mc:Ignorable="d"
              x:Class="Money.Report"
              Title="ОТЧЕТ"
-             BackgroundColor="#EFF3DB"
+             Padding="20"
+             BackgroundColor="#f1ead8"
              >
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout>
             <Label Text="Текущий месяц" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="расход" FontSize="Small" FontAttributes="None"/>

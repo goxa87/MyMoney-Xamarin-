@@ -79,35 +79,7 @@ namespace Money
         }
 
 
-
-
-        // ПРЕНЕСТИ В 4 СТРАНИЦУ
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        async void ClearHistory(object sender, EventArgs e)
-        {
-            /// это перенести куданить дальше в настройки
-            bool answer = await DisplayAlert("ВНИМАНИЕ!", "Все записи будут удалены. Вы уверенны?", "Да. Удалить", "НЕТ");
-            if(answer)
-            {
-                int col = 0;
-                List<models.Stroka> list = App.Database.GetStroksAsync().Result;
-                foreach (var i in list)
-                {
-                    col+= await App.Database.DeleteStrokaAsync(i);
-                }
-
-                lblCurPlus.Text = "0";
-                lblCurDis.Text = "0";
-                lblLastPlus.Text = "0";
-                lblLastDis.Text = "0";
-                lblTotalPlus.Text = "0";
-                lblTotalDis.Text = "0";
-            }
-        }
+        
 
         /// <summary>
         /// Вызов выборки для текущего месяца
@@ -153,9 +125,17 @@ namespace Money
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnTotalDetail_Clicked(object sender, EventArgs e)
+        async private void BtnTotalDetail_Clicked(object sender, EventArgs e)
         {
+            List<models.Stroka> data = App.Database.GetStroksAsync().Result;
 
+            DateTime start = new DateTime(2018,01,01);
+            DateTime end = new DateTime(2030, 01, 01);  // этот мес 1 число 00 ч 00 мин
+
+            data = data.Where(d => d.Data > start
+            && d.Data < end).ToList();
+
+            await Navigation.PushAsync(new ListView(data));
         }
     }
 }

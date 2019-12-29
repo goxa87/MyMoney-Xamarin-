@@ -6,8 +6,8 @@
              mc:Ignorable="d"
              x:Class="Money.Selection"
              Padding="20"
-             BackgroundColor="#EFF3DB"
              Title="Найти"
+             BackgroundColor="#f1ead8"
              >
     <ContentPage.Content>
         <StackLayout>
@@ -53,7 +53,6 @@
             <Button x:Name="btnShow" 
                     Text="Показать" 
                     Clicked="BtnShow_Clicked"
-                    BackgroundColor="#6B824B" 
                     CornerRadius="10"
                     />
         </StackLayout>

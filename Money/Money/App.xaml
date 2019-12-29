@@ -9,27 +9,28 @@
 
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#6B824B"/>
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="BorderColor" Value="#000000"/>
+                <Setter Property="BackgroundColor" Value="#ffcd00"/>
+                <Setter Property="BorderColor" Value="#1b5972"/>
                 <Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="TextColor" Value="#1b5972" />
                 <Setter Property="CornerRadius" Value="10"/>
             </Style>
 
-        
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#1b5972"/>
+                <Setter Property="BarTextColor" Value="#ffcd00"/>
+            </Style>
+                        
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="TextColor" Value="#1b5972"/>
             </Style>
             
             <Style TargetType="Entry">
-                <Setter Property="BackgroundColor" Value="DarkKhaki"/>
-                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="BackgroundColor" Value="#DarkKhaki"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="TextColor" Value="#1b5972"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

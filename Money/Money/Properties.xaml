@@ -4,14 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Money.Properties">
+             x:Class="Money.Properties"
+             Title="Меню"
+             BackgroundColor="#f1ead8"
+             >
   <ContentPage.Content>
         <StackLayout Margin="20">
             <Button x:Name="btnPropRash" Text="Настройка категорий расходов" Clicked="BtnPropRash_Clicked" />
-            <Button x:Name="btnPropDoh" Text="Настройка категорий расходов" Clicked="BtnPropDoh_Clicked" />
-            <Label Text="Цветовая схема"/>
-            <Picker x:Name="pcStyle"/>
-            <Button x:Name="btnMakeFile" Text="сформировать файл" Clicked="BtnMakeFile_Clicked"/>
+            <Button x:Name="btnPropDoh" Text="Настройка категорий доходов" Clicked="BtnPropDoh_Clicked" />
+            <Button x:Name="btnMakeFile" Text="Cформировать файл" Clicked="BtnMakeFile_Clicked"/>
             <Button x:Name="btnClearHistory" Text="Отчистить историю" Clicked="BtnClearHistory_Clicked"  />
 
         </StackLayout>

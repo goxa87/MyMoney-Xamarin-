@@ -101,7 +101,8 @@ namespace Money
                         break;
                     //}
                 }
-            }            
+            }
+            GetData(type);
         }
 
         /// <summary>
@@ -111,22 +112,23 @@ namespace Money
         /// <param name="e"></param>
         async private void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(enValue.Text))
-                await DisplayAlert("!", "Введите значение", "OK");
+            string value = await DisplayPromptAsync("Новая категория", "Введите заголовок категории", "Сохранить", "Отмена", "название");
+
+            if (string.IsNullOrWhiteSpace(value))
+                await DisplayAlert("Ошибка", "Пустая строка или отменено", "OK");
             else
             {
 
                 if (type)
                 {
                     //var obj = new models.TypePlus(enValue.Text);
-                    await App.PlusDB.SaveStringAsync(enValue.Text);
+                    await App.PlusDB.SaveStringAsync(value);
                 }
                 else
                 {
-                    await App.MinusDB.SaveStringAsync(enValue.Text);
+                    await App.MinusDB.SaveStringAsync(value);
                 }
                 GetData(type);
-                enValue.Text = "";
             }
             
         }

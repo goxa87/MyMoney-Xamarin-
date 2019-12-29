@@ -4,21 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Money.Categorys">
+             x:Class="Money.Categorys"
+             BackgroundColor="#f1ead8"
+             Padding="20"
+             Title="Категории">
     <ContentPage.Content>
       <StackLayout>
             <Label x:Name="txtTitle" Text="Категории"/>
-            <Entry x:Name="enValue" Placeholder="Введите название"/>
             <Button x:Name="btnAdd" Text="добавить" Clicked="BtnAdd_Clicked"/>
             <ListView x:Name="lvCategries" SeparatorColor="Brown" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Clicked="MenuItem_Clicked"
-                                          Text="УДАЛИТЬ"
-                                          CommandParameter="{Binding .}"/>
-                            </ViewCell.ContextActions>
+                        <ViewCell>                            
                             <ViewCell.View>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -28,11 +25,10 @@
                                     </Grid.ColumnDefinitions>
                                     <Label Text="{Binding Id}" Grid.Column="0"/>
                                     <Label Text="{Binding Value}" Grid.Column="1"/>
-                                    <!--<Button Text="X" BindingContext="{Binding Source={x:Reference lvCategries}, Path=BindingContext}" 
-                                            Command="{Binding DeleteItemCommand}"
-                                            CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"/>-->
+                                    
                                     <Button x:Name="btnDelete" 
                                             Text="X" Grid.Column="2"
+                                            Margin="3"
                                             Clicked="btnDelete_Clicked"
                                             CommandParameter="{Binding Id}"/>
                                 </Grid>

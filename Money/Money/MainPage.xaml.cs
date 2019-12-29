@@ -18,10 +18,10 @@ namespace Money
         {
             InitializeComponent();
             this.On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            BarBackgroundColor = Color.FromHex("#EFF3DB");
-            BarTextColor = Color.Black;
-            SelectedTabColor = Color.Red;
-            //UnselectedTabColor = Color.White;
+            BarBackgroundColor = Color.FromHex("#1b5972");
+            BarTextColor = Color.FromHex("#ffcd00");
+            SelectedTabColor = Color.Gold;
+            UnselectedTabColor = Color.White;
             
 
             var addString = new AddString();
@@ -29,13 +29,13 @@ namespace Money
             addString.IconImageSource = "ico2.png";
 
 
-            var selection = new NavigationPage(new Selection()) { Title = "ПОИСК" , BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black};
+            var selection = new NavigationPage(new Selection()) { Title = "ПОИСК" };
             selection.IconImageSource = "ico3.png";
 
-            var reportPage = new NavigationPage( new Report()) { Title = "ОТЧЕТ", BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black };
+            var reportPage = new NavigationPage( new Report()) { Title = "ОТЧЕТ"};
             reportPage.IconImageSource = "ico4.png";
 
-            var propPage = new NavigationPage(new Properties()) { Title = "Настройки", BarBackgroundColor = Color.FromHex("#EFF3DB"), BarTextColor = Color.Black };
+            var propPage = new NavigationPage(new Properties()) { Title = "Настройки"};
             propPage.IconImageSource = "ico5.png";
             Children.Add(addString);
             Children.Add(selection); // навигация

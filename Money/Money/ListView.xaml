@@ -6,8 +6,8 @@
              mc:Ignorable="d"
              x:Class="Money.ListView"
              Padding="20"
-             BackgroundColor="#EFF3DB"
-             Title="Результат выборки">
+             Title="Результат выборки"
+             BackgroundColor="#f1ead8">
     <StackLayout>
          <!--<Label x:Name="lblN" 
                 Text="Результат выборки(сдл прямой дату)"
