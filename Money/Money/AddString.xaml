@@ -11,19 +11,19 @@
         <StackLayout>
 
             
-            <Label Text="ДОБАВИТЬ ЗАПИСЬ"
-                   HorizontalOptions="Center" 
-                   HorizontalTextAlignment="Center"    
-                   
+            <Label Text="Доход/Расход"
+                   FontSize="Small"                   
                    />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnSign" 
                         Text="-" 
-                        WidthRequest="50" 
+                        WidthRequest="50"
+                        FontSize="Large"
+                        FontAttributes="Bold"
                         Clicked="BtnSign_Clicked"
                         />
                 <Entry x:Name="entSum" 
-                       Placeholder="Сумма" 
+                       Placeholder="Сумма без знака" 
                        Keyboard="Numeric" 
                        BackgroundColor="DarkKhaki" 
                        HorizontalOptions="FillAndExpand"
@@ -34,13 +34,26 @@
             <BoxView BackgroundColor="OliveDrab" 
                      HeightRequest="3" 
                      HorizontalOptions="FillAndExpand"/>
-            <Picker x:Name="picerType" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>                
+            
+                <Picker x:Name="picerType" 
                     SelectedIndex="0" 
                     FontAttributes="Bold"
                     FontSize="Large"
                     BackgroundColor="DarkKhaki"                    
                     />
-
+                <Button x:Name="btnAddCategory"
+                        Text="+"
+                        FontSize="Large" 
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        Clicked="BtnAddCategory_Clicked"
+                        />
+            </Grid>
             
 
             <BoxView BackgroundColor="OliveDrab" 

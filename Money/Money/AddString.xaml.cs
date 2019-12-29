@@ -125,5 +125,15 @@ namespace Money
             }
                 
         }
+        /// <summary>
+        /// вызов окна категорий
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void BtnAddCategory_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Categorys(currentSign));
+            BtnSign_Clicked(this, new EventArgs());
+        }
     }
 }

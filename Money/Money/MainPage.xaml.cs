@@ -22,9 +22,9 @@ namespace Money
             BarTextColor = Color.FromHex("#ffcd00");
             SelectedTabColor = Color.Gold;
             UnselectedTabColor = Color.White;
-            
 
-            var addString = new AddString();
+
+            var addString = new NavigationPage(new AddString() {Title= "Добавить запись" });
             addString.Title = "ДОБАВИТЬ";
             addString.IconImageSource = "ico2.png";
 

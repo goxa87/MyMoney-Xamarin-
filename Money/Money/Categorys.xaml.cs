@@ -77,30 +77,12 @@ namespace Money
 
             
             if (type) //из базы доходов
-            {
-                int? flag =-1;
-                while (true)
-                {
-                    //flag = 
-                        await App.PlusDB.DeleteValueAsync(val);
-                    //if (flag.HasValue == false)
-                    //{
-                        break;
-                    //}
-                }
+            {               
+                await App.PlusDB.DeleteValueAsync(val);                
             }
             else
             {
-                int? flag = -1;
-                while (true)
-                {
-                    //flag = 
-                        await App.MinusDB.DeleteValueAsync(val);
-                    //if (flag.HasValue == false)
-                    //{
-                        break;
-                    //}
-                }
+                 await App.MinusDB.DeleteValueAsync(val);                
             }
             GetData(type);
         }

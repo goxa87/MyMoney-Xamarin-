@@ -19,12 +19,11 @@
                             <ViewCell.View>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="6*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Id}" Grid.Column="0"/>
-                                    <Label Text="{Binding Value}" Grid.Column="1"/>
+                                    
+                                    <Label Text="{Binding Value}"/>
                                     
                                     <Button x:Name="btnDelete" 
                                             Text="X" Grid.Column="2"

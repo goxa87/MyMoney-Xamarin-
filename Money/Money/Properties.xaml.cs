@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,17 @@ using Xamarin.Forms.Xaml;
 namespace Money
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Properties : ContentPage
+    public partial class Properties : ContentPage, IPropertiesView
     {
+        PropertiesPageProvider provider { get; set; }
+
+
         public Properties()
         {
             InitializeComponent();
+            provider = new PropertiesPageProvider(new GetFileService(), this);
+
+            //btnClearHistory.Clicked += provider.SaveFileOperation;
         }
 
         /// <summary>
@@ -39,15 +46,10 @@ namespace Money
 
 
         /// <summary>
-        /// Создание файла для внешнего отчета
+        /// отчистить историю
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BtnMakeFile_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
         async private void BtnClearHistory_Clicked(object sender, EventArgs e)
         {
             
@@ -62,6 +64,12 @@ namespace Money
                 }
                 await DisplayAlert("Удаление","База данных отчищена.","OK");
             }
+        }
+
+        private void BtnMakeFile_Clicked(object sender, EventArgs e)
+        {
+            Debug.WriteLine("метод в код бихайнд");
+            provider.SaveFileOperation(this,new EventArgs());
         }
     }
 }
