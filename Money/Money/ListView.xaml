@@ -24,7 +24,7 @@
         <ListView x:Name="lvViborka"
                    HasUnevenRows="True"
                    SeparatorColor="Olive"
-                   
+                   ItemTapped="LvViborka_ItemTapped"
                   >   
             <ListView.ItemTemplate>
                 <DataTemplate>

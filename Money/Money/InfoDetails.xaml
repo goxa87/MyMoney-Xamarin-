@@ -5,22 +5,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="#f1ead8"
-             x:Class="Money.InfoDetails">
-  <ListView x:Name="MyListView">           
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   d:Text="{Binding .}"
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   d:Text="Detail"
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    
-  </ListView>
+             x:Class="Money.InfoDetails" 
+             Padding="20"
+             Title="Детали записи">
+    <StackLayout>
+        <Label
+            x:Name="txtTitle"
+            Text="123"
+            />
+        
+        <Entry x:Name="txtValue"
+               BackgroundColor="DarkKhaki" 
+               HorizontalOptions="FillAndExpand"
+               PlaceholderColor="#282828"/>
+        
+        <Entry x:Name="txtCategory"
+               BackgroundColor="DarkKhaki" 
+               HorizontalOptions="FillAndExpand"
+               PlaceholderColor="#282828"
+                />
+        <Editor x:Name="txtDetails"
+                BackgroundColor="DarkKhaki" 
+                   HeightRequest="200" 
+                   VerticalOptions="StartAndExpand" 
+                   PlaceholderColor="#282828"/>
+        <Button x:Name="btnSaveChanges"
+                Text="Сохранить"
+                HorizontalOptions="FillAndExpand"
+                Clicked="BtnSaveChanges_Clicked"
+                />
+
+    </StackLayout>
 </ContentPage>

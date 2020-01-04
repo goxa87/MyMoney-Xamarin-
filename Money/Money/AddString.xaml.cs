@@ -30,6 +30,8 @@ namespace Money
             
         }
 
+        
+        
         /// <summary>
         /// Изменение знака суммы операции
         /// </summary>
@@ -71,7 +73,7 @@ namespace Money
         /// <param name="i">номер ошибки </param>
         async private void OnTypeException(string s, int i)
         {
-            await DisplayAlert("Ошибка типов записей.", s + $": #{i}", "ОК");
+            await DisplayAlert("Ошибка записи.", s + $": #{i}", "ОК");
         }
 
         /// <summary>
@@ -89,7 +91,7 @@ namespace Money
             }
             else //
             {
-                OnTypeException("Пустая строка", 75);
+                OnTypeException("Пустое значение суммы", 75);
             }
         }
 
@@ -133,6 +135,7 @@ namespace Money
         async private void BtnAddCategory_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Categorys(currentSign));
+            BtnSign_Clicked(this, new EventArgs());
             BtnSign_Clicked(this, new EventArgs());
         }
     }

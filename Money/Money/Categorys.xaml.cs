@@ -73,7 +73,7 @@ namespace Money
         {
             var button = (Button)sender;
             bool flag1 = int.TryParse(button.CommandParameter.ToString(),out int val);
-            await DisplayAlert("ID", "Удаление категории: " + val, "ok");
+            //await DisplayAlert("Удаление", "Удаление категории.", "ok");
 
             
             if (type) //из базы доходов
@@ -85,6 +85,7 @@ namespace Money
                  await App.MinusDB.DeleteValueAsync(val);                
             }
             GetData(type);
+            await DisplayAlert("Удаление", "Удаление категории.", "ok");
         }
 
         /// <summary>

@@ -12,9 +12,8 @@
         <StackLayout Margin="20">
             <Button x:Name="btnPropRash" Text="Настройка категорий расходов" Clicked="BtnPropRash_Clicked" />
             <Button x:Name="btnPropDoh" Text="Настройка категорий доходов" Clicked="BtnPropDoh_Clicked" />
-            <Button x:Name="btnMakeFile" Text="Cформировать файл" Clicked="BtnMakeFile_Clicked"/>
             <Button x:Name="btnClearHistory" Text="Отчистить историю" Clicked="BtnClearHistory_Clicked"  />
-
+            <Button x:Name="btnInfo" Text="Информация" Clicked="BtnInfo_Clicked" />
         </StackLayout>
   </ContentPage.Content>
 </ContentPage>

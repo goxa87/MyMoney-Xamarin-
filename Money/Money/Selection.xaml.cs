@@ -19,17 +19,23 @@ namespace Money
             InitializeComponent();
             dpStart.Date = DateTime.Today.AddDays(-1);
 
+            // заполнение пикера категориями минусом и плюсовыми
             var arr1 = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
             var arr2 = App.PlusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
             var rez = arr1.Union(arr2).ToList();
             // дикий костыль  
+            // 
             List<string> arr = new List<string>();
             foreach (var a in rez)
                 arr.Add(a.str);
             pickerType.ItemsSource = arr;
             
         }
-
+        /// <summary>
+        /// Показать выборку по параметрам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async private void BtnShow_Clicked(object sender, EventArgs e)
         {
             //
@@ -68,12 +74,6 @@ namespace Money
 
             List<models.Stroka> rez2 = new List<models.Stroka>();
             viborka.ForEach((o) => rez2.Add(o));
-
-
-
-            //// здесь какбы нужно присвоить rez результат линка но получается только это
-
-            //var rez2 = new ObservableCollection<Stroka>(await App.Database.GetStroksAsync());
 
             await Navigation.PushAsync(new ListView(rez2));
         }

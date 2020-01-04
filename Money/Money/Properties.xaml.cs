@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+//using Excel = Microsoft.Office.Interop.Excel;
 
 using Xamarin.Forms;
 
@@ -20,9 +23,7 @@ namespace Money
         public Properties()
         {
             InitializeComponent();
-            provider = new PropertiesPageProvider(new GetFileService(), this);
-
-            //btnClearHistory.Clicked += provider.SaveFileOperation;
+            provider = new PropertiesPageProvider(new GetFileService(), this);            
         }
 
         /// <summary>
@@ -62,14 +63,29 @@ namespace Money
                 {
                     col += await App.Database.DeleteStrokaAsync(i);
                 }
-                await DisplayAlert("Удаление","База данных отчищена.","OK");
+                await DisplayAlert("Удаление","База данных очищена.","OK");
             }
         }
-
-        private void BtnMakeFile_Clicked(object sender, EventArgs e)
+        
+        /// <summary>
+        /// Несколько алертов для информации 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void BtnInfo_Clicked(object sender, EventArgs e)
         {
-            Debug.WriteLine("метод в код бихайнд");
-            provider.SaveFileOperation(this,new EventArgs());
+            bool rezult = await DisplayAlert("Информация", "Данная программа поможет вам вести учет финансов. Удобство в том, что ввод новой записи происходит на первой" +
+                      " странице, что позволяет вносить изменения быстро.", "Дальше", "Хватит");
+            if (rezult)
+            {
+                bool rezult2 = await DisplayAlert("Обновления", "Для обратной связи, получения обновлений и дополнительной информации можете обратиться к разработчику в Telegram по нику @Georgy_Milk",
+                  "Дальше", "Хватит");
+                if (rezult2)
+                {
+                    await DisplayAlert("Спасибо!", "Спасибо, что пользуетесь этой программой, я надеюсь она вам нравится. Если у вас есть непреодолимое желание " +
+                        "отблагодарить разработчика, можете его не преодолевать и поблагодарить на карту Cбера \n4276 6000 4052 8859 - Георгий Николаевич.", "Хорошо)");
+                }
+            }
         }
     }
 }

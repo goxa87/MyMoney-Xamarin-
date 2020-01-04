@@ -34,6 +34,7 @@
             <BoxView BackgroundColor="OliveDrab" 
                      HeightRequest="3" 
                      HorizontalOptions="FillAndExpand"/>
+            <Label Text="Категория" FontSize="Small"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="6*"/>

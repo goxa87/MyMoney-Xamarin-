@@ -50,5 +50,24 @@ namespace Money
                 lvViborka.ItemsSource = List;
             }
         }
+
+        /// <summary>
+        /// Нажатие на элемент списка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async private void LvViborka_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (swCaregory.IsToggled) // если собраны по категориям
+            {
+                await DisplayAlert("!", "Для просмотра и редактирования записей разверните категории", "OK");
+            }
+            else // для развернутого 
+            {
+                await Navigation.PushAsync(new InfoDetails(lvViborka.SelectedItem as models.Stroka));
+                
+                //await Navigation.PopAsync();
+            }
+        }
     }
 }
