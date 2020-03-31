@@ -13,25 +13,45 @@ namespace Money
         /// Знак операции - списание + начисление
         /// </summary>
         bool currentSign { get; set; }
+
+        //public AddString addString { get; }
         
         public AddString()
         {
             InitializeComponent();
             currentSign = false;
+            //addString = this;
+
+            //var rez = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
+            //// дикий костыль  
+            //List<string> arr = new List<string>();
+            //foreach (var a in rez)
+            //    arr.Add(a.str);
+            //picerType.ItemsSource = arr;
+            //picerType.SelectedIndex = 0;
 
 
-            var rez = App.MinusDB.GetStringAsync().Result.Select(p => new { str = p.Value });
-            // дикий костыль  
-            List<string> arr = new List<string>();
-            foreach (var a in rez)
-                arr.Add(a.str);
-            picerType.ItemsSource = arr;
-            picerType.SelectedIndex = 0;
-            
+            //picerType.ItemsSource = App.minusList;
+            //if(App.minusList.Count!=0)
+            //    picerType.SelectedIndex = 0;
+            List<string> minusList = App.minusList;
+            //picerType.ItemsSource = minusList;
+            //if (minusList.Count != 0)
+            //    picerType.SelectedIndex = 0;
+            //picerType.SetBinding(Picker.ItemsSourceProperty, "minusList");
+
+            picerType.BindingContext = this;
+            picerType.SetBinding(Picker.ItemsSourceProperty, "minusList");
+
         }
 
-        
-        
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    if (this.currentSign) picerType.ItemsSource = App.plusList;
+        //    else picerType.ItemsSource = App.minusList;
+        //}
+
         /// <summary>
         /// Изменение знака суммы операции
         /// </summary>
@@ -135,8 +155,8 @@ namespace Money
         async private void BtnAddCategory_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Categorys(currentSign));
-            BtnSign_Clicked(this, new EventArgs());
-            BtnSign_Clicked(this, new EventArgs());
+            //BtnSign_Clicked(this, new EventArgs());
+            //BtnSign_Clicked(this, new EventArgs());
         }
     }
 }

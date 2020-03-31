@@ -28,6 +28,15 @@ namespace Money
         /// </summary>
         static TypeMinusDb minusDB;
 
+        /// <summary>
+        /// Список строк для заполнения доход
+        /// </summary>
+        public static List<string> plusList { get; set; }
+        /// <summary>
+        /// Срисок строк для заполнения строк расход
+        /// </summary>
+        public static List<string> minusList { get; set; }
+
         public static StringDB Database
         {
             get {
@@ -67,6 +76,20 @@ namespace Money
         public App()
         {
             InitializeComponent();
+
+            var arr1 = PlusDB.GetStringAsync().Result.Select(r => new { str = r.Value });
+            plusList = new List<string>();
+            foreach (var e in arr1)
+            {
+                plusList.Add(e.str);
+            }
+
+            var arr2 = MinusDB.GetStringAsync().Result.Select(r => new {str = r.Value});
+            minusList = new List<string>();
+            foreach (var e in arr2)
+            {
+                minusList.Add(e.str);
+            }
 
             MainPage = new MainPage();
         }

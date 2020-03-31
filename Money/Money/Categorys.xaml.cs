@@ -82,7 +82,8 @@ namespace Money
             }
             else
             {
-                 await App.MinusDB.DeleteValueAsync(val);                
+                await App.MinusDB.DeleteValueAsync(val);
+                //App.minusList.Remove();
             }
             GetData(type);
             await DisplayAlert("Удаление", "Удаление категории.", "ok");
@@ -106,10 +107,13 @@ namespace Money
                 {
                     //var obj = new models.TypePlus(enValue.Text);
                     await App.PlusDB.SaveStringAsync(value);
+                    App.plusList.Add(value);
+                    
                 }
                 else
                 {
                     await App.MinusDB.SaveStringAsync(value);
+                    App.minusList.Add(value);
                 }
                 GetData(type);
             }
