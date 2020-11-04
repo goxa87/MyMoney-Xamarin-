@@ -75,7 +75,7 @@ namespace Money
             List<models.Stroka> rez2 = new List<models.Stroka>();
             viborka.ForEach((o) => rez2.Add(o));
 
-            await Navigation.PushAsync(new ListView(rez2));
+            await Navigation.PushAsync(new ListView(rez2.OrderByDescending(el => el.Data).ToList()));
         }
     }
 }

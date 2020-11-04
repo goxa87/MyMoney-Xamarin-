@@ -94,7 +94,7 @@ namespace Money
             DateTime end = new DateTime((DateTime.Today.AddMonths(1).Year), DateTime.Today.AddMonths(1).Month, 1 );   // след мес первое число
  
             data = data.Where(d => d.Data > start
-            && (d.Data< end)).ToList();
+            && (d.Data< end)).OrderByDescending(el => el.Data).ToList();
 
             await Navigation.PushAsync(new ListView(data));
 
@@ -113,7 +113,7 @@ namespace Money
             DateTime end = new DateTime((DateTime.Today.Year), DateTime.Today.Month, 1);  // этот мес 1 число 00 ч 00 мин
 
             data = data.Where(d => d.Data > start
-            && d.Data<end).ToList();
+            && d.Data<end).OrderByDescending(el => el.Data).ToList();
 
             await Navigation.PushAsync(new ListView(data));
         }
@@ -133,7 +133,7 @@ namespace Money
             DateTime end = new DateTime(2030, 01, 01);  // этот мес 1 число 00 ч 00 мин
 
             data = data.Where(d => d.Data > start
-            && d.Data < end).ToList();
+            && d.Data < end).OrderByDescending(el => el.Data).ToList();
 
             await Navigation.PushAsync(new ListView(data));
         }
